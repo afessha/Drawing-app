@@ -1,12 +1,26 @@
+body {
+  background-color: rgb(199, 238, 238);
+  font-family: "Lato", sans-serif;
+}
+h1 {
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 #btnRed {
   background-color: red;
+  color: white;
 }
 #btnPurple {
   background-color: purple;
+  color: white;
 }
 #btnYellow {
   background-color: yellow;
+  color: black;
 }
 #btnGreen {
   background-color: green;
+  color: white;
 }
