@@ -53,7 +53,12 @@ $(document).ready(function() {
     }
   });
 
-  
+  $("draw").mouseup(function(e) {
+    paint = false;
+  });
+  $("draw").mouseleave(function(e) {
+    paint = false;
+  });
 
   var clickX = new Array();
   var clickY = new Array();
