@@ -1,43 +1,3 @@
-var redButton = document.getElementById("btnRed");
-var greenButton = document.getElementById("btnGreen");
-var yellowButton = document.getElementById("btnYellow");
-var purpleButton = document.getElementById("btnPurple");
-var smallButton = document.getElementById("btnSmall");
-var normalButton = document.getElementById("btnNormal");
-var largeButton = document.getElementById("btnLarge");
-var hugeButton = document.getElementById("btnHuge");
-var clearButton = document.getElementById("btnClear");
-
-redButton.addEventListener("click", function changeColor() {
-  alert("Red");
-});
-greenButton.addEventListener("click", function displayMessage() {
-  alert("you have clicked the Green button");
-});
-yellowButton.addEventListener("click", function displayMessage() {
-  alert("you have clicked the Yellow button");
-});
-purpleButton.addEventListener("click", function displayMessage() {
-  alert("you have clicked the Purple button");
-});
-
-//For selcting size
-smallButton.addEventListener("click", function displayMessage() {
-  alert("you have clicked the Small button");
-});
-normalButton.addEventListener("click", function displayMessage() {
-  alert("you have clicked the Normal button");
-});
-largeButton.addEventListener("click", function displayMessage() {
-  alert("you have clicked the Large button");
-});
-hugeButton.addEventListener("click", function displayMessage() {
-  alert("you have clicked the Huge button");
-});
-
-//For clearing
-clearButton.addEventListener("click", function displayMessage() {});
-
 $("document").ready(function() {
   var canvas = document.getElementById("draw");
   var paint, context, mouseX, mouseY;
@@ -109,6 +69,21 @@ $("document").ready(function() {
       context.lineTo(clickX[i], clickY[i]);
       context.closePath();
       context.stroke();
+    }
+  }
+  //Event listener for clearing
+  var clearButton = document.getElementById("btnClear");
+  if (clearButton) {
+    if (clearButton.addEventListener) {
+      clearButton.addEventListener("click", function(e) {
+        if (canvas) {
+          context = canvas.getContext("2d");
+          context.clearRect(0, 0, width, height);
+          clickX.length = 0;
+          clickY.length = 0;
+          clickDrag.length = 0;
+        }
+      });
     }
   }
 });
