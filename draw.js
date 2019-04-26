@@ -1,10 +1,11 @@
 $("document").ready(function() {
   var canvas = document.getElementById("draw");
-  var paint, context, mouseX, mouseY, cursColor;
+  var paint, context, mouseX, mouseY, cursColor, brushSize;
   var clickX = new Array();
   var clickY = new Array();
   var clickDrag = new Array();
   var clickColor = new Array();
+  var clickSize = new Array();
   var width = 600;
   var height = 400;
   //Listening to mouse down event
@@ -53,6 +54,7 @@ $("document").ready(function() {
     clickY.push(y);
     clickDrag.push(dragging);
     clickColor.push(cursColor);
+    clickSize.push(brushSize);
   }
   //Defining the function called reDraw
   function reDraw() {
@@ -60,7 +62,7 @@ $("document").ready(function() {
     context.clearRect(0, 0, width, height);
     // context.strokeStyle = "#df4b26";
     context.lineJoin = "round";
-    context.lineWidth = 5;
+    // context.lineWidth = 5;
     for (var i = 0; i < clickX.length; i++) {
       context.beginPath();
       if (clickDrag[i] && i) {
@@ -70,6 +72,7 @@ $("document").ready(function() {
       }
       context.lineTo(clickX[i], clickY[i]);
       context.strokeStyle = clickColor[i];
+      context.lineWidth = clickSize[i];
       context.closePath();
       context.stroke();
     }
@@ -123,6 +126,43 @@ $("document").ready(function() {
     if (btnYellow.addEventListener) {
       btnYellow.addEventListener("click", function(e) {
         cursColor = "yellow";
+      });
+    }
+  }
+
+  //Selecting brush size
+  var btnSmall = document.getElementById("btnSmall");
+  if (btnSmall) {
+    if (btnSmall.addEventListener) {
+      btnSmall.addEventListener("click", function(e) {
+        brushSize = 2;
+      });
+    }
+  }
+
+  var btnNormal = document.getElementById("btnNormal");
+  if (btnNormal) {
+    if (btnNormal.addEventListener) {
+      btnNormal.addEventListener("click", function(e) {
+        brushSize = 5;
+      });
+    }
+  }
+
+  var btnLarge = document.getElementById("btnLarge");
+  if (btnLarge) {
+    if (btnLarge.addEventListener) {
+      btnLarge.addEventListener("click", function(e) {
+        brushSize = 10;
+      });
+    }
+  }
+
+  var btnHuge = document.getElementById("btnHuge");
+  if (btnHuge) {
+    if (btnHuge.addEventListener) {
+      btnHuge.addEventListener("click", function(e) {
+        brushSize = 20;
       });
     }
   }
