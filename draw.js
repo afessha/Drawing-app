@@ -94,6 +94,8 @@ $("document").ready(function() {
   }
 
   //Select color of brush
+
+  //Select red brush color
   var btnRed = document.getElementById("btnRed");
   if (btnRed) {
     if (btnRed.addEventListener) {
@@ -103,6 +105,7 @@ $("document").ready(function() {
     }
   }
 
+  //Select Green brush color
   var btnGreen = document.getElementById("btnGreen");
   if (btnGreen) {
     if (btnGreen.addEventListener) {
@@ -112,6 +115,7 @@ $("document").ready(function() {
     }
   }
 
+  //Select purple brush color
   var btnPurple = document.getElementById("btnPurple");
   if (btnPurple) {
     if (btnPurple.addEventListener) {
@@ -121,6 +125,7 @@ $("document").ready(function() {
     }
   }
 
+  //Select yellow brush color
   var btnYellow = document.getElementById("btnYellow");
   if (btnYellow) {
     if (btnYellow.addEventListener) {
@@ -131,6 +136,8 @@ $("document").ready(function() {
   }
 
   //Selecting brush size
+
+  //select small brush size
   var btnSmall = document.getElementById("btnSmall");
   if (btnSmall) {
     if (btnSmall.addEventListener) {
@@ -140,6 +147,7 @@ $("document").ready(function() {
     }
   }
 
+  //select normal brush size
   var btnNormal = document.getElementById("btnNormal");
   if (btnNormal) {
     if (btnNormal.addEventListener) {
@@ -149,6 +157,7 @@ $("document").ready(function() {
     }
   }
 
+  //select large brush size
   var btnLarge = document.getElementById("btnLarge");
   if (btnLarge) {
     if (btnLarge.addEventListener) {
@@ -158,6 +167,7 @@ $("document").ready(function() {
     }
   }
 
+  //Select huge brush szie
   var btnHuge = document.getElementById("btnHuge");
   if (btnHuge) {
     if (btnHuge.addEventListener) {
