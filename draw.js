@@ -1,17 +1,18 @@
 $("document").ready(function() {
   var canvas = document.getElementById("draw");
-  var paint, context, mouseX, mouseY;
+  var paint, context, mouseX, mouseY, cursColor;
   var clickX = new Array();
   var clickY = new Array();
   var clickDrag = new Array();
+  var clickColor = new Array();
   var width = 600;
   var height = 400;
   //Listening to mouse down event
   if (canvas.addEventListener) {
     canvas.addEventListener("mousedown", function(e) {
       paint = true;
-      var mouseX = e.pageX - this.offsetLeft;
-      var mouseY = e.pageY - this.offsetTop;
+      mouseX = e.pageX - this.offsetLeft;
+      mouseY = e.pageY - this.offsetTop;
       addClick(mouseX, mouseY);
       reDraw();
     });
@@ -51,12 +52,13 @@ $("document").ready(function() {
     clickX.push(x);
     clickY.push(y);
     clickDrag.push(dragging);
+    clickColor.push(cursColor);
   }
   //Defining the function called reDraw
   function reDraw() {
     var context = canvas.getContext("2d");
     context.clearRect(0, 0, width, height);
-    context.strokeStyle = "#df4b26";
+    // context.strokeStyle = "#df4b26";
     context.lineJoin = "round";
     context.lineWidth = 5;
     for (var i = 0; i < clickX.length; i++) {
@@ -67,6 +69,7 @@ $("document").ready(function() {
         context.moveTo(clickX[i] - 1, clickY[i]);
       }
       context.lineTo(clickX[i], clickY[i]);
+      context.strokeStyle = clickColor[i];
       context.closePath();
       context.stroke();
     }
@@ -83,6 +86,43 @@ $("document").ready(function() {
           clickY.length = 0;
           clickDrag.length = 0;
         }
+      });
+    }
+  }
+
+  //Select color of brush
+  var btnRed = document.getElementById("btnRed");
+  if (btnRed) {
+    if (btnRed.addEventListener) {
+      btnRed.addEventListener("click", function(e) {
+        cursColor = "red";
+      });
+    }
+  }
+
+  var btnGreen = document.getElementById("btnGreen");
+  if (btnGreen) {
+    if (btnGreen.addEventListener) {
+      btnGreen.addEventListener("click", function(e) {
+        cursColor = "green";
+      });
+    }
+  }
+
+  var btnPurple = document.getElementById("btnPurple");
+  if (btnPurple) {
+    if (btnPurple.addEventListener) {
+      btnPurple.addEventListener("click", function(e) {
+        cursColor = "purple";
+      });
+    }
+  }
+
+  var btnYellow = document.getElementById("btnYellow");
+  if (btnYellow) {
+    if (btnYellow.addEventListener) {
+      btnYellow.addEventListener("click", function(e) {
+        cursColor = "yellow";
       });
     }
   }
