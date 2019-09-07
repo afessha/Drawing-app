@@ -1,0 +1,19 @@
+{
+  "name": "drawing-app",
+  "version": "1.0.0",
+  "description": "A drawing app",
+  "main": "draw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AKFessha/Drawing-app.git"
+  },
+  "author": "Awet fessha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AKFessha/Drawing-app/issues"
+  },
+  "homepage": "https://github.com/AKFessha/Drawing-app#readme"
+}
