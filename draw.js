@@ -1,6 +1,8 @@
 $("document").ready(function() {
   var canvas = document.getElementById("draw");
-  var paint, context, mouseX, mouseY, cursColor, brushSize;
+  var paint, context, mouseX, mouseY;
+  var cursColor = "#000000";
+  var brushSize = 5;
   var clickX = new Array();
   var clickY = new Array();
   var clickDrag = new Array();
@@ -89,6 +91,15 @@ $("document").ready(function() {
           clickY.length = 0;
           clickDrag.length = 0;
         }
+      });
+    }
+  }
+
+  var btnErase = document.getElementById("btnErase");
+  if (btnErase) {
+    if (btnErase.addEventListener) {
+      btnErase.addEventListener("click", function(e) {
+        cursColor = "white";
       });
     }
   }

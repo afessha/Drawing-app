@@ -1,11 +1,13 @@
 body {
   background-color: rgb(199, 238, 238);
   font-family: "Lato", sans-serif;
+  text-align: center;
 }
 h1 {
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
 #btnRed {
