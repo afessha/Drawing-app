@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drawing app</title>
+    <link rel="stylesheet" href="/assets/styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Welcome to drawing app</h1>
+    <div id="tools">
+      Clear the canvas: <button id="btnClear">Clear</button>
+      <button id="btnErase">Erase</button>
+
+      <div>
+        <br />
+        Choose a color: <button id="btnRed">Red</button>
+        <button id="btnPurple">Purple</button>
+        <button id="btnGreen">Green</button>
+        <button id="btnYellow">Yellow</button>
+      </div>
+      <div>
+        <br />
+        Choose a brush size: <button id="btnSmall">Small</button>
+        <button id="btnNormal">Normal</button>
+        <button id="btnLarge">Large</button>
+        <button id="btnHuge">Huge</button>
+      </div>
+    </div>
+    <canvas id="draw" width="600" height="400"> </canvas>
+
+    <script src="/assets/scripts/jquery-3.4.0.js"></script>
+    <script src="/assets/scripts/draw.js"></script>
+  </body>
+</html>
